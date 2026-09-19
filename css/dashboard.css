@@ -1,0 +1,265 @@
+:root {
+  --student-color: rgba(78, 114, 223);
+  --student-color-hover: rgba(78, 114, 223, 0.5);
+  --student-transparent-color: rgba(78, 114, 223, 0.2);
+  --student-transparent-color-hover: rgba(78, 114, 223, 0.15);
+
+  --course-color: rgba(244, 180, 0);
+  --course-color-hover: rgba(244, 180, 0, 0.5);
+  --course-transparent-color: rgba(244, 180, 0, 0.2);
+  --course-transparent-color-hover: rgba(244, 180, 0, 0.15);
+
+  --subject-color: rgba(28, 200, 138);
+  --subject-color-hover: rgba(28, 200, 138, 0.5);
+  --subject-transparent-color: rgba(28, 200, 138, 0.2);
+  --subject-transparent-color-hover: rgba(28, 200, 138, 0.15);
+
+  --instructor-color: rgba(253, 126, 20, 1);
+  --instructor-color-hover: rgba(253, 126, 20, 0.5);
+  --instructor-transparent-color: rgba(253, 126, 20, 0.2);
+  --instructor-transparent-color-hover: rgba(253, 126, 20, 0.15);
+
+  --admin-color: rgba(54, 185, 204);
+  --admin-color-hover: rgba(54, 185, 204, 0.5);
+  --admin-transparent-color: rgba(54, 185, 204, 0.2);
+  --admin-transparent-color-hover: rgba(54, 185, 204, 0.15);
+
+  --assigned-subject-color: rgba(78, 115, 223, 1);
+  --assigned-subject-color-hover: rgba(78, 115, 223, 0.5);
+  --assigned-subject-transparent-color: rgba(78, 115, 223, 0.2);
+  --assigned-subject-transparent-color-hover: rgba(78, 115, 223, 0.15);
+
+  --enrolled-student-color: rgba(40, 167, 69, 1);
+  --enrolled-student-color-hover: rgba(40, 167, 69, 0.5);
+  --enrolled-student-transparent-color: rgba(40, 167, 69, 0.2);
+  --enrolled-student-transparent-color-hover: rgba(40, 167, 69, 0.15);
+
+  --pending-grade-task-color: rgba(255, 193, 7, 1);
+  --pending-grade-task-color-hover: rgba(255, 193, 7, 0.5);
+  --pending-grade-task-transparent-color: rgba(255, 193, 7, 0.2);
+  --pending-grade-task-transparent-color-hover: rgba(255, 193, 7, 0.15);
+}
+
+#welcome-container,
+#user-profile-container,
+.count-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 1.5rem;
+  background-color: var(--background-color);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  overflow: hidden;
+}
+
+#welcome-container,
+#user-profile-container {
+  min-height: 42vh;
+}
+
+#welcome-container h3,
+#welcome-container h1,
+#welcome-container p,
+#welcome-container .lead,
+#user-profile-container h4 {
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#student-container,
+#course-container,
+#subject-container,
+#instructor-container,
+#admin-container,
+#assigned-subject-container,
+#enrolled-student-container,
+#pending-grade-task-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.dashboard-container {
+  height: auto;
+  width: 100%;
+  max-width: 75%;
+  padding: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  border-radius: 3rem;
+  background-color: var(--background-color);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.body-pd .count-container > div {
+  height: 100px;
+  width: 100px;
+  transition: all 0.3s ease-in-out;
+}
+
+#student-container i,
+#course-container i,
+#subject-container i,
+#instructor-container i,
+#admin-container i,
+#assigned-subject-container i,
+#enrolled-student-container i,
+#pending-grade-task-container i {
+  font-size: 3.5rem;
+}
+
+#student-container:hover i,
+#course-container:hover i,
+#subject-container:hover i,
+#instructor-container:hover i,
+#admin-container:hover i,
+#assigned-subject-container:hover i,
+#enrolled-student-container:hover i,
+#pending-grade-task-container:hover i {
+  transition: 0.2s ease-in-out;
+}
+
+#student-container {
+  background-color: var(--student-transparent-color);
+}
+#student-container:hover {
+  background-color: var(--student-transparent-color-hover);
+}
+#student-container i {
+  color: var(--student-color);
+}
+#student-container:hover i {
+  color: var(--student-color-hover);
+}
+
+#course-container {
+  background-color: var(--course-transparent-color);
+}
+#course-container:hover {
+  background-color: var(--course-transparent-color-hover);
+}
+#course-container i {
+  color: var(--course-color);
+}
+#course-container:hover i {
+  color: var(--course-color-hover);
+}
+
+#subject-container {
+  background-color: var(--subject-transparent-color);
+}
+#subject-container:hover {
+  background-color: var(--subject-transparent-color-hover);
+}
+#subject-container i {
+  color: var(--subject-color);
+}
+#subject-container:hover i {
+  color: var(--subject-color-hover);
+}
+
+#instructor-container {
+  background-color: var(--instructor-transparent-color);
+}
+#instructor-container:hover {
+  background-color: var(--instructor-transparent-color-hover);
+}
+#instructor-container i {
+  color: var(--instructor-color);
+}
+#instructor-container:hover i {
+  color: var(--instructor-color-hover);
+}
+
+#admin-container {
+  background-color: var(--admin-transparent-color);
+}
+#admin-container:hover {
+  background-color: var(--admin-transparent-color-hover);
+}
+#admin-container i {
+  color: var(--admin-color);
+}
+#admin-container:hover i {
+  color: var(--admin-color-hover);
+}
+
+#assigned-subject-container {
+  background-color: var(--assigned-subject-transparent-color);
+}
+#assigned-subject-container:hover {
+  background-color: var(--assigned-subject-transparent-color-hover);
+}
+#assigned-subject-container i {
+  color: var(--assigned-subject-color);
+}
+#assigned-subject-container:hover i {
+  color: var(--assigned-subject-color-hover);
+}
+
+#enrolled-student-container {
+  background-color: var(--enrolled-student-transparent-color);
+}
+#enrolled-student-container:hover {
+  background-color: var(--enrolled-student-transparent-color-hover);
+}
+#enrolled-student-container i {
+  color: var(--enrolled-student-color);
+}
+#enrolled-student-container:hover i {
+  color: var(--enrolled-student-color-hover);
+}
+
+#pending-grade-task-container {
+  background-color: var(--pending-grade-task-transparent-color);
+}
+#pending-grade-task-container:hover {
+  background-color: var(--pending-grade-task-transparent-color-hover);
+}
+#pending-grade-task-container i {
+  color: var(--pending-grade-task-color);
+}
+#pending-grade-task-container:hover i {
+  color: var(--pending-grade-task-color-hover);
+}
+@media (max-width: 820px) {
+  #student-container i,
+  #course-container i,
+  #subject-container i,
+  #instructor-container i,
+  #admin-container i {
+    display: none;
+  }
+
+  .count-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .count-details h5 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .count-details h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+}

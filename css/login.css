@@ -1,0 +1,129 @@
+:root {
+  --transparent-background-color: rgba(255, 255, 255, 0.3);
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background: url("../css/images/login-background.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.glass-container {
+  position: relative;
+  display: flex;
+  border-radius: 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 1;
+  width: 85%;
+  max-width: 90%;
+  min-height: 70vh;
+  padding: 2rem;
+}
+
+.glass-container::before {
+  content: "";
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 45%;
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.left-panel {
+  flex: 0.4;
+  padding: 2rem;
+}
+
+.right-panel {
+  flex: 0.6;
+  padding: 2rem;
+}
+
+.right-panel form {
+  width: 85%;
+  max-width: 350px;
+}
+
+.input-group {
+  background-color: var(--transparent-background-color);
+  border-radius: 1rem; 
+}
+
+.input-group-text {
+  background-color: var(--transparent-background-color);  
+  border-radius: 1rem 0 0 1rem;  
+  border: none;
+}
+
+.form-control {
+  background-color: var(--transparent-background-color); 
+  border-radius: 0 1rem 1rem 0;
+  border: none;
+}
+
+.form-control:focus {
+  background-color: var(--transparent-background-color);
+  color: black;
+}
+
+.form-control.no-focus:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+.form-control::placeholder {
+  color: white;
+}
+
+.form-label {
+  font-weight: bold;
+  color: white;
+}
+
+.login-button {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  color: black;
+  font-weight: bold;
+  border: none;
+}
+
+.login-button:hover {
+  background: #e0e0e0;
+  opacity: 0.8;
+  color: black;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .glass-container::before {
+    display: none;
+  }
+
+  .glass-container {
+    flex-wrap: wrap;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: auto;
+  }
+
+  .left-panel,
+  .right-panel {
+    flex: 1;
+    padding: 1rem;
+  }
+}

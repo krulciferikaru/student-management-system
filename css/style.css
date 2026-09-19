@@ -1,0 +1,408 @@
+:root {
+  --black-text-color: #2b3036;
+  --white-text-color: #f7f6fb;
+  --background-color: rgba(255, 255, 255, 0);
+  --blue-color: #3d66fc;
+  --blue-color-hover: #4f7cfc;
+  --red-color: #ff4040;
+  --red-color-hover: #ff5a5a;
+  --orange-color: #ffa500;
+  --orange-color-hover: #ffb24d;
+  --green-color: #00ac39;
+  --green-color-hover: #00c441;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: url("../css/images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  height: auto;
+  display: block;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(15px);
+  z-index: 0;
+}
+
+/* Core Layout */
+.glass-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0%;
+  padding: 2rem;
+  border-radius: 3rem;
+  background-color: var(--background-color);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  overflow: hidden;
+  height: auto;
+}
+
+#black-text {
+  color: var(--black-text-color);
+  font-weight: bold;
+}
+
+#blue-text {
+  color: var(--blue-color);
+  font-weight: bold;
+}
+
+#white-text {
+  color: var(--white-text-color);
+  font-weight: bold;
+}
+
+/* Buttons */
+.btn,
+.export-as-dropdown-btn,
+.export-btn,
+.dropdown-toggle {
+  position: relative;
+  background-color: var(--blue-color);
+  border: none;
+  border-radius: 1rem;
+  color: var(--white-text-color);
+  transition: 0.3s ease-in-out;
+}
+
+.btn:hover,
+.export-btn:hover,
+.export-as-dropdown-btn:hover,
+.dropdown-toggle:hover {
+  color: var(--white-text-color);
+  background-color: var(--blue-color-hover);
+  cursor: pointer;
+}
+
+.enroll-btn {
+  background-color: var(--green-color);
+}
+
+.reset-password-btn {
+  background-color: var(--red-color);
+}
+
+.update-password-btn {
+  background-color: var(--orange-color);
+}
+
+.enroll-btn,
+.reset-password-btn,
+.update-password-btn {
+  border: none;
+  border-radius: 1rem;
+  color: var(--white-text-color);
+  width: 100%;
+}
+
+.enroll-btn:hover {
+  color: var(--white-text-color);
+  background-color: var(--green-color-hover);
+  cursor: pointer;
+}
+
+.reset-password-btn:hover {
+  color: var(--white-text-color);
+  background-color: var(--red-color-hover);
+  cursor: pointer;
+}
+
+.update-password-btn:hover {
+  color: var(--white-text-color);
+  background-color: var(--orange-color-hover);
+  cursor: pointer;
+}
+
+/* Form Styling */
+.form-control,
+.form-select {
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background-color: var(--background-color);
+  border: 1px solid rgba(43, 43, 43, 0.2);
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--blue-color);
+}
+
+/* Table Styling */
+#usersTable,
+#usersTable th,
+#usersTable td,
+#subjectsTable,
+#subjectsTable th,
+#subjectsTable td,
+#subjectsTableDetails,
+#subjectsTableDetails th,
+#subjectsTableDetails td,
+#studentsTable,
+#studentsTable th,
+#studentsTable td,
+#studentsTableDetails,
+#studentsTableDetails th,
+#studentsTableDetails td,
+#coursesTable,
+#coursesTable th,
+#coursesTable td,
+#coursesTableDetails,
+#coursesTableDetails th,
+#coursesTableDetails td,
+#gradesTable,
+#gradesTable th,
+#gradesTable td,
+#gradesTableDetails,
+#gradesTableDetails th,
+#gradesTableDetails td,
+#studentGradesTable,
+#studentGradesTable th,
+#studentGradesTable td,
+#studentsEnrolledTable,
+#studentsEnrolledTable th,
+#studentsEnrolledTable td {
+  border: none;
+  background-color: var(--background-color);
+  color: var(--black-text-color);
+  text-align: center;
+  vertical-align: middle;
+  width: auto;
+  padding: 0.5rem;
+}
+
+/* Profile Picture */
+.pfp-picture {
+  width: 275px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  background: radial-gradient(circle, #3d66fc 0%, #66b8ff 100%);
+}
+
+.user-details {
+  margin-left: 2rem;
+  font-size: 1rem;
+  max-width: 100%;
+  word-wrap: break-word; /* prevents the text from going outside the container */
+  overflow-wrap: break-word; /* if the text is longer than the container */
+}
+
+.student-details {
+  word-wrap: break-word; /* prevents the text from going outside the container */
+  overflow-wrap: break-word; /* if the text is longer than the container */
+}
+
+/* Dropdown Actions */
+.actions-dropdown {
+  background-color: var(--blue-color);
+  border-radius: 3rem;
+  color: var(--white-text-color);
+  display: block;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-toggle {
+  width: 100%;
+  height: 100%;
+}
+
+/* Eto yung like background sa dropdown menu */
+.dropdown-menu {
+  border: 1px solid var(--blue-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  min-width: 100%;
+  max-width: 75%;
+}
+
+/* Basically eto yung mga buttons */
+.dropdown-menu li a {
+  background-color: var(--background-color);
+  color: var(--black-text-color);
+  font-size: small;
+  display: flex;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  text-align: center;
+  width: 50%;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a:hover i {
+  color: var(--blue-color);
+}
+
+/* DataTables Export */
+.export-as-dropdown-btn .dt-button.buttons-collection {
+  background-color: var(--blue-color);
+  border-radius: 3rem;
+  color: var(--white-text-color);
+  width: 100%;
+  text-align: center;
+}
+
+/* Export Dropdown Menu (same feel as .dropdown-menu) */
+div.dt-button-collection {
+  background-color: var(--white-text-color);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+  border: 1px solid var(--blue-color);
+  border-radius: 0.75rem;
+  min-width: 100%;
+  z-index: 1000;
+}
+
+/* Export Items */
+div.dt-button-collection .dt-button {
+  display: block;
+  background-color: transparent;
+  color: var(--black-text-color);
+  padding: 0.5rem 1rem;
+  text-align: left;
+  border: none;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+div.dt-button-collection .dt-button:hover {
+  background-color: var(--background-color);
+  color: var(--blue-color);
+}
+
+/* Cancel Button */
+.cancel-btn {
+  font-size: 2rem;
+  color: var(--black-text-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  color: var(--blue-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .glass-container {
+    width: 90%;
+    max-width: 80%;
+    min-width: 80%;
+    padding: 1.5rem;
+  }
+
+  .btn .export-as-dropdown-btn {
+    width: auto;
+    display: block;
+    margin: auto;
+    font-size: 0.2rem;
+  }
+
+  .export-btn, .enroll-btn {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .pfp-picture {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .details-title {
+    font-size: 100%;
+  }
+
+  .user-details, .student-details {
+    margin-left: 0;
+    font-size: 90%;
+  }
+
+  .dt-button.buttons-collection {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .dropdown-menu {
+    font-size: 0.85rem;
+  }
+
+  .dropdown-toggle {
+    padding: 0.3rem;
+    text-align: center;
+  }
+
+  .view-btn,
+  .edit-btn,
+  .deactivate-btn,
+  .activate-btn,
+  .add-btn,
+  .delete-btn {
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+
+
+  .bi-eye,
+  .bi-pencil-square,
+  .bi-toggle-off,
+  .bi-toggle-on,
+  .bi-plus-circle, .bi-trash {
+    display: none;
+  }
+
+  #usersTable,
+  #usersTable th,
+  #usersTable td,
+  #subjectsTable,
+  #subjectsTable th,
+  #subjectsTable td,
+  #subjectsTableDetails,
+  #subjectsTableDetails th,
+  #subjectsTableDetails td,
+  #studentsTableDetails,
+  #studentsTableDetails th,
+  #studentsTableDetails td,
+  #gradesTable,
+  #gradesTable th,
+  #gradesTable td,
+  #studentGradesTable,
+  #studentGradesTable th,
+  #studentGradesTable td,
+  #studentsEnrolledTable,
+  #studentsEnrolledTable th,
+  #studentsEnrolledTable,
+  #coursesTable,
+  #coursesTable th,
+  #coursesTable td {
+    font-size: 90%;
+  }
+}
+
+.height-100 {
+  padding: 2rem 0;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.container {
+  height: auto;
+  margin-bottom: 2rem;
+}
