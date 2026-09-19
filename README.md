@@ -51,13 +51,20 @@ plugins/fpdf/ FPDF library used for PDF report generation
 ### Setup
 
 1. Clone or copy the project into your server's document root (e.g. `htdocs/student-management-system`).
-2. Create a MySQL database (e.g. `student_mngmt_db`) and set up the required tables: `users`, `students`, `courses`, `subjects`, `subject_enrollments`, and `grades`.
-3. Update the database credentials in [database/Database.php](database/Database.php) to match your local MySQL setup (host, username, password, database name).
-4. Start your local server and navigate to the project in your browser, e.g.:
+2. Start XAMPP (Apache + MySQL) and open phpMyAdmin.
+3. Import [database/schema.sql](database/schema.sql) — it creates the `student_mngmt_db` database, all required tables (`users`, `students`, `courses`, `subjects`, `subject_enrollments`, `grades`), and a small set of seed/sample data.
+4. Update the database credentials in [database/Database.php](database/Database.php) to match your local MySQL setup (host, username, password) if they differ from the defaults (`root` with no/blank password on XAMPP).
+5. Start your local server and navigate to the project in your browser, e.g.:
    ```
    http://localhost/student-management-system
    ```
-5. Log in with a seeded user account to access the corresponding dashboard.
+6. Log in with one of the seeded accounts (password for all of them is `password123`):
+
+   | Role | Email |
+   |---|---|
+   | Super-admin | superadmin@edutrack.com |
+   | Admin | admin@edutrack.com |
+   | Instructor | instructor@edutrack.com |
 
 ## Notes
 
